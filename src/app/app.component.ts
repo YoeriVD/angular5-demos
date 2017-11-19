@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, DoCheck } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
 
@@ -7,7 +7,8 @@ import { Expense } from './expense'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
 
@@ -23,9 +24,13 @@ export class AppComponent implements OnInit {
     return this._viewList || this.list;
   }
 
+  constructor(private changeDetectionRef : ChangeDetectorRef){}
+
   addExpense(expense: Expense) {
     expense.id = this.list.length + 1;
     this.list.push(expense);
+    this.changeDetectionRef.markForCheck();
+
   }
   updateList = (result: Expense[]) => this._viewList = result;
 
