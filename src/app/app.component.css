@@ -1,0 +1,6 @@
+.form-card input.ng-dirty.ng-invalid{
+    border: 2px solid red;
+}
+.form-card input.ng-dirty.ng-valid{
+    border: 2px solid green;
+}
