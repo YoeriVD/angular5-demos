@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
   addExpense(expense: Expense) {
     expense.id = this.list.length + 1;
     this.list.push(expense);
-    this.changeDetectionRef.markForCheck();
+    this.changeDetectionRef.markForCheck(); 
 
   }
   updateList = (result: Expense[]) => this._viewList = result;
