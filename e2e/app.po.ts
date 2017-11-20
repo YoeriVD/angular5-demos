@@ -3,10 +3,11 @@ import { ElementFinder, ElementArrayFinder } from 'protractor/built/element';
 
 export class AppPage {
   constructor() {
-
+    this.form = new Form();
+    this.list = new List();  
   }
-  form = new Form();
-  list = new List();
+  form;
+  list;
   navigateTo() {
     return browser.get('/');
   }
