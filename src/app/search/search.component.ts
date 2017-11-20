@@ -22,7 +22,7 @@ export class SearchComponent implements OnInit {
             .valueChanges
             .subscribe(val => this.searchResult.emit(this.list.filter(e => {
                 for (let propery in e) {
-                    if (e[propery] && e[propery].toString().indexOf(val) > -1) {
+                    if (e[propery] && e[propery].toString().toLowerCase().indexOf(val.toLowerCase()) > -1) {
                         return true;
                     }
                 }

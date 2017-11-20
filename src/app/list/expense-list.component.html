@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table" sortable #sort="column">
     <thead>
       <tr>
         <th>Id</th>
@@ -8,7 +8,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let expense of list">
+      <tr *ngFor="let expense of list | orderBy : sort.selectedColumn">
         <td>{{expense.id}}</td>
         <td>{{expense.name}}</td>
         <td>{{expense.date | date : 'longDate'}}</td>

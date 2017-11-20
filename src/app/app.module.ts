@@ -11,12 +11,15 @@ import { AppComponent } from './app.component';
 import { ExpenseListComponent } from './list/expense-list.component';
 import { ExpenseFormComponent } from './form/expense-form.component';
 import { SearchComponent } from './search/search.component';
+import { OrderByPipe } from './grid/orderBy.pipe'
+import { SortableColumnDirective } from './grid/sortableColumn.directive'
+
 
 registerLocaleData(localeNlBe, localeNlBeExtra);
 
 @NgModule({
   declarations: [
-    AppComponent, ExpenseListComponent, ExpenseFormComponent, SearchComponent
+    AppComponent, ExpenseListComponent, ExpenseFormComponent, SearchComponent, OrderByPipe, SortableColumnDirective
   ],
   imports: [
     BrowserModule, ReactiveFormsModule, NgbModule.forRoot()
