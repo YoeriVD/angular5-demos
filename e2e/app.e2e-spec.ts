@@ -7,8 +7,13 @@ describe('expenses-demo App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should be able to add an expense', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+    expect(page.list.rows.count()).toBe(4);
+    page.form.name.sendKeys('Drink');
+    page.form.date.sendKeys('12/11/2017');
+    page.form.amount.sendKeys(15.5);
+    page.form.submit.click();
+    expect(page.list.rows.count()).toBe(5);
   });
 });
