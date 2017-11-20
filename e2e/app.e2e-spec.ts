@@ -5,10 +5,10 @@ describe('expenses-demo App', () => {
 
   beforeEach(() => {
     page = new AppPage();
+    page.navigateTo();    
   });
 
   it('should be able to add an expense', () => {
-    page.navigateTo();
     expect(page.list.rows.count()).toBe(4);
     page.form.name.sendKeys('Drink');
     page.form.date.sendKeys('12/11/2017');
