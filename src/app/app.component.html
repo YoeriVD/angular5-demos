@@ -27,7 +27,7 @@
       <div class="card form-card">
         <div class="card-body">
           <h4 class="card-title">New expense</h4>
-          <expense-form (newExpense)="addExpense($event)"></expense-form>
+          <expense-form></expense-form>
         </div>
       </div>
     </div>
@@ -35,13 +35,13 @@
       <div class="card search-card">
         <div class="card-body">
           <h4 class="card-title">Search</h4>
-          <search [list]="list" (searchResult)="updateList($event)"></search>
+          <search></search>
         </div>
       </div>
       <div class="card list-card">
         <div class="card-body">
           <h4 class="card-title">Submitted expenses</h4>
-          <expense-list [list]="viewList"></expense-list>
+          <expense-list></expense-list>
         </div>
       </div>
     </div>

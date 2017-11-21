@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { preserveWhitespacesDefault } from '@angular/compiler/src/config';
 
 @Pipe({
     name: 'orderBy'

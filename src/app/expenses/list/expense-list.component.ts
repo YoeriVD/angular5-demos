@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Expense } from '../expense'
-
+import { ExpenseService } from '../expenses.service'
 @Component({
     selector: 'expense-list',
     templateUrl: 'expense-list.component.html'
@@ -8,9 +8,11 @@ import { Expense } from '../expense'
 
 export class ExpenseListComponent implements OnInit {
 
-    @Input() list : Expense[] = []; 
+    @Input() list: Expense[] = [];
 
-    constructor() { }
+    constructor(private service: ExpenseService) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.list = this.service.get();
+    }
 }

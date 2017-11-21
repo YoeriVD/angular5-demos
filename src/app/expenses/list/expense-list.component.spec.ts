@@ -1,0 +1,37 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { TestBed, ComponentFixture, inject } from '@angular/core/testing';
+import { ExpenseListComponent } from './expense-list.component';
+import { Expense } from '../expense';
+import { SortableColumnDirective } from '../../grid/sortableColumn.directive'
+import { OrderByPipe } from '../../grid/orderBy.pipe'
+import { ExpenseService } from '../expenses.service'
+
+describe("ExpenseListComponent", () => {
+
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            declarations: [ExpenseListComponent, SortableColumnDirective, OrderByPipe],
+            schemas: [NO_ERRORS_SCHEMA],
+            providers: [ExpenseService]
+        });
+        TestBed.compileComponents();
+    })
+
+
+    it("should render 2 rows", inject([ExpenseService], (service) => {
+
+        const fakelist = [
+            { id: 1, name: '', amount: 55, date: new Date() },
+            { id: 1, name: '', amount: 55, date: new Date() }
+        ]
+        spyOn(service, 'get').and.returnValue(fakelist);
+        
+        const fixture: ComponentFixture<ExpenseListComponent> = TestBed.createComponent(ExpenseListComponent);
+        const component: ExpenseListComponent = fixture.debugElement.componentInstance;
+
+
+        fixture.detectChanges();
+
+        expect(fixture.debugElement.nativeElement.querySelectorAll('tbody tr').length).toBe(2);
+    }))
+});
