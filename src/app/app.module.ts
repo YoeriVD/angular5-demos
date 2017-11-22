@@ -9,6 +9,9 @@ import { AppComponent } from './app.component';
 
 import { ExpensesModule } from './expenses';
 import { GridModule } from './grid';
+import { AppRoutesModule } from './app.routes';
+import { AboutModule } from './about';
+
 
 registerLocaleData(localeNlBe, localeNlBeExtra);
 
@@ -17,7 +20,7 @@ registerLocaleData(localeNlBe, localeNlBeExtra);
     AppComponent,
   ],
   imports: [
-    BrowserModule, NgbModule.forRoot(), ExpensesModule, GridModule
+    BrowserModule, NgbModule.forRoot(), ExpensesModule, GridModule, AppRoutesModule, AboutModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'nl-BE' }

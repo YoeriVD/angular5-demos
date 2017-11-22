@@ -1,21 +1,19 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ExpenseService } from '../expenses.service'; 
 @Component({
     selector: 'search',
     templateUrl: 'search.component.html'
 })
 
 export class SearchComponent implements OnInit {
-    constructor(private service : ExpenseService) { }
+    constructor() { }
     searchFrm = new FormGroup({
         searchTxt: new FormControl()
     })
 
-    list: any[] = [];
+    @Input()list: any[] = [];
 
     ngOnInit() {
-        this.service.get().subscribe(exp => this.list = exp);
         this
             .searchFrm
             .get('searchTxt')
