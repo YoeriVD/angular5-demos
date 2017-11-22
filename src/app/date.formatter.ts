@@ -1,3 +1,6 @@
+//improvements on their way ...
+// see https://github.com/ng-bootstrap/ng-bootstrap/pull/1966/files/758eb7ae35de6532d98d43becac2331ba6662109#diff-1b7f94edbdae1410a9ed78009e6c21a0
+
 import { NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import * as moment from 'moment';
 
