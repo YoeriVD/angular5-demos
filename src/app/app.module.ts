@@ -7,8 +7,8 @@ import localeNlBeExtra from '@angular/common/locales/extra/nl-BE';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 
-import { ExpensesModule } from './expenses/expenses.module';
-import { GridModule } from './grid/grid.module';
+import { ExpensesModule } from './expenses';
+import { GridModule } from './grid';
 
 registerLocaleData(localeNlBe, localeNlBeExtra);
 

@@ -15,7 +15,7 @@ export class SearchComponent implements OnInit {
     list: any[] = [];
 
     ngOnInit() {
-        this.list = this.service.get();
+        this.service.get().subscribe(exp => this.list = exp);
         this
             .searchFrm
             .get('searchTxt')
