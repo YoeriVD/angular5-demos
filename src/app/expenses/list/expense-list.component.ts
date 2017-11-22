@@ -1,8 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectionStrategy, ChangeDetectorRef, DoCheck } from '@angular/core';
-import { Expense } from '../expense'
-import { ExpenseService } from '../expenses.service'
-import { Observable } from 'rxjs/Observable'
-import { checkAndUpdateBinding } from '@angular/core/src/view/util';
+import { Expense } from '../expense';
+import { ExpenseService } from '../expenses.service';
+import { Observable } from 'rxjs/Observable';
 @Component({
     selector: 'expense-list',
     templateUrl: 'expense-list.component.html',
