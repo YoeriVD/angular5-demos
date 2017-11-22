@@ -12,9 +12,13 @@ import { AppComponent } from './app.component';
 import { ExpensesModule } from './expenses';
 import { AppRoutesModule } from './app.routes';
 import { AboutModule } from './about';
+import { NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDate } from '@ng-bootstrap/ng-bootstrap/datepicker/ngb-date';
 
 
 registerLocaleData(localeNlBe, localeNlBeExtra);
+
+import { NgbDateMomentParserFormatter } from './date.formatter';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,8 @@ registerLocaleData(localeNlBe, localeNlBeExtra);
     NgbModule.forRoot(), SdUiModule.forRoot(), ExpensesModule, AppRoutesModule, AboutModule
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: 'nl-BE' }
+    { provide: LOCALE_ID, useValue: 'nl-BE' },
+    { provide: NgbDateParserFormatter, useValue: new NgbDateMomentParserFormatter("DD-MM-YYYY") }
   ],
   bootstrap: [AppComponent]
 })

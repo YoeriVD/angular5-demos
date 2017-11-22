@@ -10,8 +10,14 @@
                 <small>describe what you bought</small>
             </div>
             <div class="form-group">
+
                 <label for="date">Date</label>
-                <input id="date" type="date" class="form-control" formControlName="date" />
+                <div class="input-group">
+                    <input class="form-control" formControlName="date" placeholder="dd-mm-yyyy" name="dp" ngbDatepicker #d="ngbDatepicker">
+                    <button class="input-group-addon" (click)="d.toggle()" type="button">
+                        <i class="icons8-calendar"></i>
+                    </button>
+                </div>
                 <small>When did you buy it?</small>
             </div>
             <div class="form-group">
