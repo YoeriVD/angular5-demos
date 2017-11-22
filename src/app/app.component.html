@@ -1,27 +1,19 @@
-<div class="container">
+<sd-container>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Expenses app</a>
+  <sd-header applicationName="Expenses demo"></sd-header>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-          <div ngbDropdown class="d-inline-block">
-            <a class="nav-link dropdown-toggle" ngbDropdownToggle>Manage</a>
-            <div class="dropdown-menu" ngbDropdownMenu>
-              <button class="dropdown-item" routerLink="/expenses/form">Add</button>
-              <button class="dropdown-item" routerLink="/expenses/list">Search</button>
-            </div>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" routerLink="/about">About</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <sd-body>
+    <sd-sidebar>
+      <sd-sidebar-item name="Expenses" routerLink="/expenses">
+        <sd-subnav>
+          <sd-sidebar-item routerLink="/expenses/form" name="add"></sd-sidebar-item>
+          <sd-sidebar-item routerLink="/expenses/list" name="search"></sd-sidebar-item>
+        </sd-subnav>
+      </sd-sidebar-item>
+      <sd-sidebar-item routerLink="/about" name="about"></sd-sidebar-item>
+    </sd-sidebar>
+    <router-outlet></router-outlet>
 
+  </sd-body>
 
-  <router-outlet></router-outlet>
-
-</div>
+</sd-container>

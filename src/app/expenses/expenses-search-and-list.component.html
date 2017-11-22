@@ -1,12 +1,13 @@
-<div class="card search-card">
-    <div class="card-body">
-        <h4 class="card-title">Search</h4>
-        <search [list]="list"></search>
-    </div>
-</div>
-<div class="card list-card">
-    <div class="card-body">
-        <h4 class="card-title">Submitted expenses</h4>
-        <expense-list [list]="list"></expense-list>
-    </div>
-</div>
+<sd-card>
+	<sd-card-header title="Search"></sd-card-header>
+	<sd-card-body>
+		<search [list]="list"></search>
+	</sd-card-body>
+</sd-card>
+
+<sd-card>
+	<sd-card-header title="Submitted expenses"></sd-card-header>
+	<sd-card-body>
+		<expense-list [list]="list"></expense-list>
+	</sd-card-body>
+</sd-card>

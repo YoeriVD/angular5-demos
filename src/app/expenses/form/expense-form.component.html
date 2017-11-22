@@ -1,6 +1,8 @@
-<div class="card list-card">
-    <div class="card-body">
-        <h4 class="card-title">Add expense</h4>
+<sd-card>
+    <sd-card-header title="Add expense">
+        <small>add a new expense</small>
+    </sd-card-header>
+    <sd-card-body>
         <form [formGroup]="frm" novalidate (ngSubmit)="addExpense()">
             <div class="form-group">
                 <label for="name">Name</label>
@@ -19,6 +21,6 @@
             </div>
             <button type="submit" class="btn btn-success">submit</button>
         </form>
-        
-    </div>
-</div>
+
+    </sd-card-body>
+</sd-card>
