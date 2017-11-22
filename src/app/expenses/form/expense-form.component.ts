@@ -4,6 +4,7 @@ import { Validators } from '@angular/forms';
 
 import { Expense } from '../expense';
 import { ExpenseService } from '../expenses.service';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap/datepicker/ngb-date-struct';
 @Component({
     selector: 'expense-form',
     templateUrl: 'expense-form.component.html'
@@ -27,7 +28,8 @@ export class ExpenseFormComponent implements OnInit {
     addExpense() {
         if (this.frm.invalid) return;
         const expense: Expense = this.frm.value;
-        expense.date = new Date(this.frm.get('date').value)
+        const date : NgbDateStruct = this.frm.get('date').value
+        expense.date = new Date(date.year, date.month, date.day);
         this.newExpense.emit(expense);
         this.service.add(expense);
         this.frm.reset();
