@@ -11,8 +11,8 @@ export class ExpenseService {
     constructor(private httpClient: HttpClient) { }
     get(): Observable<Expense[]> {
         return this.httpClient
-            .get(this.url)
-            .map((resp: Expense[]) =>
+            .get<Expense[]>(this.url)
+            .map((resp) =>
                 resp.map(exp => {
                     exp.date = new Date(exp["date"]);
                     return exp;
