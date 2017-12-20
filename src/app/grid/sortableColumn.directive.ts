@@ -6,7 +6,7 @@ export class SortableColumnDirective implements AfterContentInit {
 
     constructor(private el: ElementRef) { }
     selectedColumn = 'id';
-
+    reverse = false;
     @ContentChildren('th', {descendants : true}) headers : QueryList<ElementRef>;
 
     ngAfterContentInit(): void {
@@ -15,7 +15,11 @@ export class SortableColumnDirective implements AfterContentInit {
         .mergeMap(h => Observable.fromEvent(h.nativeElement, 'click'))
         .map((ce : Event) => <HTMLTableHeaderCellElement>ce.target)
         .map(th => th.innerText.toLowerCase())
-        .forEach(val => this.selectedColumn = val);
+        .forEach(val => {
+            if(this.selectedColumn === val) this.reverse = !this.reverse;
+            this.selectedColumn = val;
+            console.log(this.selectedColumn, this.reverse);
+        });
 
 
         // const el: HTMLTableElement = this.el.nativeElement;

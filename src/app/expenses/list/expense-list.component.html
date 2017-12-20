@@ -8,7 +8,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let expense of list | orderBy : sort.selectedColumn" [hidden]="expense.isHidden">
+      <tr *ngFor="let expense of list | orderBy : sort.selectedColumn : sort.reverse" [hidden]="expense.isHidden">
         <td>{{expense.id}}</td>
         <td>{{expense.name}}</td>
         <td>{{expense.date | date : 'longDate'}}</td>

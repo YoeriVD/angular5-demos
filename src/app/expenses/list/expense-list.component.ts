@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 @Component({
     selector: 'expense-list',
     templateUrl: 'expense-list.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.Default
 })
 
 export class ExpenseListComponent implements DoCheck {
