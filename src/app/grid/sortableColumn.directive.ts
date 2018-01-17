@@ -1,14 +1,13 @@
-import { Directive, ElementRef, OnInit, AfterContentInit,QueryList,ContentChildren } from '@angular/core';
+import { Directive, ElementRef, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 @Directive({ selector: 'table[sortable]', exportAs: 'column' })
-export class SortableColumnDirective implements AfterContentInit {
+export class SortableColumnDirective implements OnInit {
 
     constructor(private el: ElementRef) { }
     selectedColumn = 'id';
     reverse = false;
-    @ContentChildren('th', {descendants : true}) headers : QueryList<ElementRef>;
-
+ 
     ngOnInit(): void {
         const el: HTMLTableElement = this.el.nativeElement;
         const elements = el.getElementsByTagName('th');
