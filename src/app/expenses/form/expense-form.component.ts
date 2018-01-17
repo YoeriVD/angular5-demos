@@ -25,9 +25,9 @@ export class ExpenseFormComponent implements OnInit {
     });
 
     addExpense() {
-        if (this.frm.invalid) return;
+        if (this.frm.invalid) { return; }
         const expense: Expense = this.frm.value;
-        expense.date = new Date(this.frm.get('date').value)
+        expense.date = new Date(this.frm.get('date').value);
         this.newExpense.emit(expense);
         this.service.add(expense);
         this.frm.reset();

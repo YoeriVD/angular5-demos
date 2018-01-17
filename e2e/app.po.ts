@@ -4,7 +4,7 @@ import { ElementFinder, ElementArrayFinder } from 'protractor/built/element';
 export class AppPage {
   constructor() {
     this.form = new Form();
-    this.list = new List();  
+    this.list = new List();
   }
   form;
   list;
@@ -24,7 +24,7 @@ export class Form {
     return element(by.id('amount'));
   }
   get submit() {
-    return element(by.css('button[type="submit"]'))
+    return element(by.css('button[type="submit"]'));
   }
 }
 export class List {

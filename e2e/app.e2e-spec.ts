@@ -5,7 +5,7 @@ describe('expenses-demo App', () => {
 
   beforeEach(() => {
     page = new AppPage();
-    page.navigateTo();    
+    page.navigateTo();
   });
 
   it('should be able to add an expense', () => {
