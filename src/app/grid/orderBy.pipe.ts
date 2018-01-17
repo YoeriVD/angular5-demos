@@ -16,6 +16,7 @@ export class OrderByPipe implements PipeTransform {
             return 0;
         });
         if (this.previousPropertyName === property) {
+            this.previousPropertyName = null;
             return sorted.reverse();
         } else {
             this.previousPropertyName = property;
