@@ -25,11 +25,11 @@ describe("ExpenseListComponent", () => {
         ]
 
         const fixture: ComponentFixture<ExpenseListComponent> = TestBed.createComponent(ExpenseListComponent);
-        const component: ExpenseListComponent = fixture.debugElement.componentInstance;
+        const component: ExpenseListComponent = fixture.componentInstance;
 
         component.list = fakelist;
         fixture.detectChanges();
 
-        expect(fixture.debugElement.nativeElement.querySelectorAll('tbody tr').length).toBe(2);
+        expect(fixture.nativeElement.querySelectorAll('tbody tr').length).toBe(2);
     })
 });
