@@ -6,17 +6,18 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 
 export class OrderByPipe implements PipeTransform {
-    transform<T>(value: T[], property: string, reverse = false): T[] {
-        console.log("sorting", property, reverse)
-        if (!value) return value;
-        var sorted = value.sort((left, right) => {
+    previousPropertyName: string;
+    transform<T>(value: T[], property: string): T[] {
+        if (!value) { return value; }
+        const sorted = value.sort((left, right) => {
             const leftProp = left[property];
             const rightProp = right[property];
-            if (leftProp > rightProp) return 1;
-            if (leftProp < rightProp) return -1;
+            if (leftProp > rightProp) { return 1; }
+            if (leftProp < rightProp) { return -1; }
             return 0;
         });
-        if (reverse) {
+        if (this.previousPropertyName === property) {
+            this.previousPropertyName = null;
             return sorted.reverse();
         } else {
             return sorted;

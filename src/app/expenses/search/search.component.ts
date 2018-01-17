@@ -9,7 +9,7 @@ export class SearchComponent implements OnInit {
     constructor() { }
     searchFrm = new FormGroup({
         searchTxt: new FormControl()
-    })
+    });
 
     @Input()list: any[] = [];
 
@@ -20,12 +20,12 @@ export class SearchComponent implements OnInit {
             .valueChanges
             .subscribe(val => this.list.forEach(e => {
                 e.isHidden = true;
-                for (let propery in e) {
+                for (const propery in e) {
                     if (e[propery] && e[propery].toString().toLowerCase().indexOf(val.toLowerCase()) > -1) {
                         e.isHidden = false;
                     }
                 }
-            }))
+            }));
 
     }
 

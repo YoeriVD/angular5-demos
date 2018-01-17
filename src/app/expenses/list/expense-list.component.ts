@@ -9,12 +9,12 @@ import { Observable } from 'rxjs/Observable';
 })
 
 export class ExpenseListComponent implements DoCheck {
-    constructor(private changeDetection : ChangeDetectorRef){}
-    
+    constructor(private changeDetection: ChangeDetectorRef) {}
+
     previousListLength = 0;
     ngDoCheck(): void {
         const list = (this.list || []);
-        if(this.previousListLength !== list.filter(i => !!i['isHidden']).length){
+        if (this.previousListLength !== list.filter(i => !!i['isHidden']).length) {
             this.previousListLength = this.list.length;
             this.changeDetection.markForCheck();
         }

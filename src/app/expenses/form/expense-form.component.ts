@@ -26,7 +26,7 @@ export class ExpenseFormComponent implements OnInit {
     });
 
     addExpense() {
-        if (this.frm.invalid) return;
+        if (this.frm.invalid) { return; }
         const expense: Expense = this.frm.value;
         const date : NgbDateStruct = this.frm.get('date').value
         expense.date = new Date(date.year, date.month, date.day);
